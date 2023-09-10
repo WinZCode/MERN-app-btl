@@ -19,8 +19,8 @@ const App = () => {
                                 path={route.path}
                                 element={
                                     <>
-                                        <Page />
                                         <Layout />
+                                        <Page />
                                     </>
                                 }
                             />
