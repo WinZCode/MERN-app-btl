@@ -4,7 +4,7 @@ import { Row } from 'antd';
 export const WrapperHeader = styled(Row)`
     display: flex;
     align-items: center;
-    padding: 10px 120px;
+    padding: 0 120px;
     background: #52ab98;
 `;
 
@@ -20,7 +20,7 @@ export const WrapperAccount = styled.div`
     color: #fff;
     gap: 10px;
     font-size: 14px;
-    margin-left: 10px;
+    margin-left: 20px;
     cursor: pointer;
 `;
 

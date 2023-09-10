@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col } from 'antd';
+import logo from '../../images/logo/logo.png';
 import {
     WrapperHeader,
     Img,
@@ -7,14 +7,13 @@ import {
     WrapperTextHeader,
     WrapperCart,
 } from './style';
-import logo from '../../images/logo/logo.png';
-import { Input } from 'antd';
+import { Col } from 'antd';
 import {
     UserOutlined,
     CaretDownOutlined,
     ShoppingCartOutlined,
 } from '@ant-design/icons';
-const { Search } = Input;
+import ButtonInputSearch from '../ButtonInputSearch/ButtonInputSearch';
 
 const HeaderComponent = () => {
     return (
@@ -24,23 +23,28 @@ const HeaderComponent = () => {
                     <Img src={logo} alt="logo" />
                 </Col>
                 <Col span={12}>
-                    <Search
-                        placeholder="input search text"
-                        allowClear
-                        enterButton="Search"
+                    <ButtonInputSearch
                         size="large"
-                        // onSearch={onSearch}
+                        placeholder="Search..."
+                        textBtn="Search"
                     />
                 </Col>
-                <Col span={6} style={{ display: 'flex' }}>
+                <Col
+                    span={6}
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}
+                >
                     <WrapperAccount>
                         <UserOutlined style={{ fontSize: '30px' }} />
                         <div>
                             <WrapperTextHeader>
-                                Đăng kí / Đăng nhập
+                                Sign Up / Sign In
                             </WrapperTextHeader>
                             <div>
-                                <WrapperTextHeader>Tài khoản</WrapperTextHeader>
+                                <WrapperTextHeader>Account</WrapperTextHeader>
                                 <CaretDownOutlined
                                     style={{
                                         fontSize: '10px',
@@ -54,7 +58,7 @@ const HeaderComponent = () => {
                         <ShoppingCartOutlined
                             style={{ fontSize: '35px', marginRight: '4px' }}
                         />
-                        <WrapperTextHeader>Giỏ hàng</WrapperTextHeader>
+                        <WrapperTextHeader>Cart</WrapperTextHeader>
                     </WrapperCart>
                 </Col>
             </WrapperHeader>
