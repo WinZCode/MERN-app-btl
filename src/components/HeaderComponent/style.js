@@ -14,6 +14,11 @@ export const Img = styled.img`
     cursor: pointer;
 `;
 
+export const WrapperTextHeader = styled.span`
+    font-size: 12px;
+    color: #fff;
+`;
+
 export const WrapperAccount = styled.div`
     display: flex;
     align-items: center;
@@ -22,11 +27,7 @@ export const WrapperAccount = styled.div`
     font-size: 14px;
     margin-left: 20px;
     cursor: pointer;
-`;
-
-export const WrapperTextHeader = styled.span`
-    font-size: 12px;
-    color: #fff;
+    font-weight: 500;
 `;
 
 export const WrapperCart = styled.div`
@@ -34,4 +35,5 @@ export const WrapperCart = styled.div`
     font-size: 14px;
     margin-left: 30px;
     cursor: pointer;
+    font-weight: 500;
 `;
