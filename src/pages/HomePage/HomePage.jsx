@@ -1,11 +1,12 @@
 import React from 'react';
 import TypeProduct from '../../components/TypeProduct/TypeProduct';
-import { Wrapper, WrapperTypeProduct } from './style';
+import { Wrapper, WrapperCard, WrapperTypeProduct } from './style';
 import SliderComponent from '../../components/SliderComponent/SliderComponent';
 import slider1 from '../../assets/images/slider/slider-1.webp';
 import slider2 from '../../assets/images/slider/slider-2.webp';
 import slider3 from '../../assets/images/slider/slider-3.webp';
 import slider4 from '../../assets/images/slider/slider-4.webp';
+import CardComponent from '../../components/CardComponent/CardComponent';
 
 const HomePage = () => {
     const productTypes = ['Television', 'Fridge', 'Laptop', 'Mobile Phone'];
@@ -16,10 +17,13 @@ const HomePage = () => {
                     return <TypeProduct name={type} key={type} />;
                 })}
             </WrapperTypeProduct>
-            <Wrapper>
+            <Wrapper style={{ height: 1000 }}>
                 <SliderComponent
                     arrImages={[slider1, slider2, slider3, slider4]}
                 />
+                <WrapperCard>
+                    <CardComponent />
+                </WrapperCard>
             </Wrapper>
         </div>
     );

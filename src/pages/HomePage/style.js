@@ -17,3 +17,11 @@ export const Wrapper = styled.div`
     padding: 0 120px;
     background: #efefef;
 `;
+
+export const WrapperCard = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+`;
