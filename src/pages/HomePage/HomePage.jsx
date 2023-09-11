@@ -7,6 +7,7 @@ import slider2 from '../../assets/images/slider/slider-2.webp';
 import slider3 from '../../assets/images/slider/slider-3.webp';
 import slider4 from '../../assets/images/slider/slider-4.webp';
 import CardComponent from '../../components/CardComponent/CardComponent';
+import NavbarComponent from '../../components/NavbarComponent/NavbarComponent';
 
 const HomePage = () => {
     const productTypes = ['Television', 'Fridge', 'Laptop', 'Mobile Phone'];
@@ -17,13 +18,14 @@ const HomePage = () => {
                     return <TypeProduct name={type} key={type} />;
                 })}
             </WrapperTypeProduct>
-            <Wrapper style={{ height: 1000 }}>
+            <Wrapper style={{ height: 2000 }}>
                 <SliderComponent
                     arrImages={[slider1, slider2, slider3, slider4]}
                 />
                 <WrapperCard>
                     <CardComponent />
                 </WrapperCard>
+                <NavbarComponent />
             </Wrapper>
         </div>
     );
