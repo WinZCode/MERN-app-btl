@@ -6,6 +6,7 @@ export const WrapperHeader = styled(Row)`
     align-items: center;
     padding: 0 120px;
     background: #52ab98;
+    flex-wrap: nowrap;
 `;
 
 export const Img = styled.img`
@@ -17,6 +18,7 @@ export const Img = styled.img`
 export const WrapperTextHeader = styled.span`
     font-size: 12px;
     color: #fff;
+    white-space: nowrap;
 `;
 
 export const WrapperAccount = styled.div`

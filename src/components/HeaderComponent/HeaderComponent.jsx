@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../images/logo/logo.png';
+import logo from '../../assets/images/logo/logo.png';
 import {
     WrapperHeader,
     Img,

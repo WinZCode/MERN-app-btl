@@ -5,9 +5,15 @@ export const WrapperTypeProduct = styled.div`
     align-items: center;
     justify-content: flex-start;
     gap: 24px;
-    height: 40px;
-    background: #c8d8e4;
+    height: 44px;
     padding: 0 120px;
+    background: #fff;
+    color: #2b6777;
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 500;
+`;
+
+export const Wrapper = styled.div`
+    padding: 0 120px;
+    background: #efefef;
 `;
