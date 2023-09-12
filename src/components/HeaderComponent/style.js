@@ -33,7 +33,6 @@ export const WrapperAccount = styled.div`
 `;
 
 export const WrapperCart = styled.div`
-    color: #fff;
     font-size: 14px;
     margin-left: 30px;
     cursor: pointer;

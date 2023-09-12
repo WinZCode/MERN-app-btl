@@ -7,7 +7,7 @@ import {
     WrapperTextHeader,
     WrapperCart,
 } from './style';
-import { Col } from 'antd';
+import { Badge, Col } from 'antd';
 import {
     UserOutlined,
     CaretDownOutlined,
@@ -55,9 +55,15 @@ const HeaderComponent = () => {
                         </div>
                     </WrapperAccount>
                     <WrapperCart>
-                        <ShoppingCartOutlined
-                            style={{ fontSize: '35px', marginRight: '4px' }}
-                        />
+                        <Badge count={4} size="small">
+                            <ShoppingCartOutlined
+                                style={{
+                                    fontSize: '35px',
+                                    marginRight: '4px',
+                                    color: '#fff',
+                                }}
+                            />
+                        </Badge>
                         <WrapperTextHeader>Cart</WrapperTextHeader>
                     </WrapperCart>
                 </Col>
