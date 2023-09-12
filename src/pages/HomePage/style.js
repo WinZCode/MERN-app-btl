@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import ButtonComponent from '../../components/ButtonComponent/ButtonComponent';
+import { Col } from 'antd';
 
 export const WrapperTypeProduct = styled.div`
     display: flex;
@@ -18,12 +19,8 @@ export const Wrapper = styled.div`
     padding: 0 120px;
 `;
 
-export const WrapperCards = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 20px;
+export const WrapperCards = styled(Col)`
     margin-top: 26px;
-    flex-wrap: wrap;
 `;
 
 export const WrapperButton = styled.div`

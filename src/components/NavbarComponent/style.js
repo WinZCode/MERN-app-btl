@@ -3,8 +3,7 @@ import styled from 'styled-components';
 export const WrapperNavbar = styled.div`
     background: #fff;
     padding: 10px;
-    width: 180px;
-    border-radius: 7px;
+    border-radius: 6px;
 `;
 
 export const WrapperLabelText = styled.span`

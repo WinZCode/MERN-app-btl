@@ -14,6 +14,7 @@ import slider2 from '../../assets/images/slider/slider-2.webp';
 import slider3 from '../../assets/images/slider/slider-3.webp';
 import slider4 from '../../assets/images/slider/slider-4.webp';
 import CardComponent from '../../components/CardComponent/CardComponent';
+import { Col, Row } from 'antd';
 
 const HomePage = () => {
     const productTypes = ['Television', 'Fridge', 'Laptop', 'Mobile Phone'];
@@ -28,12 +29,45 @@ const HomePage = () => {
                 <SliderComponent
                     arrImages={[slider1, slider2, slider3, slider4]}
                 />
-                <WrapperCards>
-                    <CardComponent />
-                    <CardComponent />
-                    <CardComponent />
-                    <CardComponent />
-                    <CardComponent />
+                <WrapperCards span={24}>
+                    <Row gutter={[16, 16]}>
+                        <Col span={4}>
+                            <CardComponent />
+                        </Col>
+                        <Col span={4}>
+                            <CardComponent />
+                        </Col>
+                        <Col span={4}>
+                            <CardComponent />
+                        </Col>
+                        <Col span={4}>
+                            <CardComponent />
+                        </Col>
+                        <Col span={4}>
+                            <CardComponent />
+                        </Col>
+                        <Col span={4}>
+                            <CardComponent />
+                        </Col>
+                        <Col span={4}>
+                            <CardComponent />
+                        </Col>
+                        <Col span={4}>
+                            <CardComponent />
+                        </Col>
+                        <Col span={4}>
+                            <CardComponent />
+                        </Col>
+                        <Col span={4}>
+                            <CardComponent />
+                        </Col>
+                        <Col span={4}>
+                            <CardComponent />
+                        </Col>
+                        <Col span={4}>
+                            <CardComponent />
+                        </Col>
+                    </Row>
                 </WrapperCards>
                 <WrapperButton>
                     <ButtonComponentLoad
