@@ -2,12 +2,15 @@ import { Card } from 'antd';
 import styled from 'styled-components';
 
 export const WrapperCardStyle = styled(Card)`
-    width: 200px;
+    position: relative;
+    width: 20%;
     & img {
         height: 200px;
         width: 100%;
+        object-fit: contain;
+        margin: 0 auto;
+        padding-top: 20px;
     }
-    position: relative;
 `;
 
 export const StyleNameProduct = styled.div`
@@ -53,4 +56,13 @@ export const WrapperRating = styled.span`
         display: inline-block;
         margin: 0 8px;
     }
+`;
+
+export const WrapperLoved = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 400;
 `;

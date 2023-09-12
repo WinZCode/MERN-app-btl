@@ -4,6 +4,7 @@ import {
     WrapperLabelText,
     WrapperNavbar,
     WrapperPrice,
+    WrapperRateText,
     WrapperTextValue,
 } from './style';
 import { Checkbox, Rate } from 'antd';
@@ -48,7 +49,9 @@ const NavbarComponent = () => {
                                 disabled
                                 defaultValue={option}
                             />
-                            <span>from {option} stars</span>
+                            <WrapperRateText>
+                                from {option} stars
+                            </WrapperRateText>
                         </div>
                     );
                 });

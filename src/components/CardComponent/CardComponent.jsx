@@ -6,21 +6,18 @@ import {
     WrapperDiscountText,
     WrapperRating,
     WrapperCardStyle,
+    WrapperLoved,
 } from './style';
-import { StarFilled } from '@ant-design/icons';
+import { StarFilled, HeartOutlined } from '@ant-design/icons';
 import official from '../../assets/images/card/official.png';
+import product1 from '../../assets/images/product/product-1.webp';
 
 const CardComponent = () => {
     return (
         <WrapperCardStyle
             hoverable
-            bodyStyle={{ padding: 10 }}
-            cover={
-                <img
-                    alt="example"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                />
-            }
+            bodyStyle={{ padding: '0 10px 10px 10px' }}
+            cover={<img alt="product" src={product1} />}
         >
             <img
                 src={official}
@@ -48,6 +45,16 @@ const CardComponent = () => {
                 <span>15.000.000đ</span>
                 <WrapperDiscountText>-24%</WrapperDiscountText>
             </WrapperPriceText>
+            <WrapperLoved>
+                <HeartOutlined
+                    style={{
+                        fontSize: '16px',
+                        color: '#e01020',
+                        marginRight: 2,
+                    }}
+                />
+                <span>Yêu thích</span>
+            </WrapperLoved>
         </WrapperCardStyle>
     );
 };

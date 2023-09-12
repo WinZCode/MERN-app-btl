@@ -1,24 +1,35 @@
 import React from 'react';
 import { SearchOutlined } from '@ant-design/icons';
-import { ConfigProvider } from 'antd';
-import { StyledButton, StyledInput, WrapperButtonInputSearch } from './style';
+import { WrapperButtonInputSearch } from './style';
+import ButtonComponent from '../ButtonComponent/ButtonComponent';
+import InputComponent from '../InputComponent/InputComponent';
+
 const ButtonInputSearch = (props) => {
-    const { size, placeholder, textBtn } = props;
+    const {
+        size,
+        placeholder,
+        textBtn,
+        bordered,
+        backgroundColorInput = '#fff',
+        backgroundColorBtn = '#2b6777',
+        colorBtn = '#fff',
+        icon = <SearchOutlined />,
+    } = props;
+
     return (
         <WrapperButtonInputSearch>
-            <ConfigProvider
-                theme={{
-                    token: {
-                        colorPrimary: '#fff',
-                        borderRadius: 1,
-                    },
-                }}
-            >
-                <StyledInput size={size} placeholder={placeholder} />
-                <StyledButton size={size} icon={<SearchOutlined />}>
-                    {textBtn}
-                </StyledButton>
-            </ConfigProvider>
+            <InputComponent
+                size={size}
+                placeholder={placeholder}
+                bordered={bordered}
+                style={{ backgroundColor: backgroundColorInput }}
+            />
+            <ButtonComponent
+                size={size}
+                icon={icon}
+                textBtn={textBtn}
+                style={{ backgroundColor: backgroundColorBtn, color: colorBtn }}
+            />
         </WrapperButtonInputSearch>
     );
 };

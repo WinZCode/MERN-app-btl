@@ -25,7 +25,7 @@ const HeaderComponent = () => {
                 <Col span={12}>
                     <ButtonInputSearch
                         size="large"
-                        placeholder="Search..."
+                        placeholder="Search here..."
                         textBtn="Search"
                     />
                 </Col>

@@ -2,6 +2,7 @@ import HomePage from '../pages/HomePage/HomePage';
 import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
 import OrderPage from '../pages/OrderPage/OrderPage';
 import ProductsPage from '../pages/ProductsPage/ProductsPage';
+import TypeProductPage from '../pages/TypeProductPage/TypeProductPage';
 
 const routes = [
     {
@@ -17,6 +18,11 @@ const routes = [
     {
         path: '/products',
         page: ProductsPage,
+        isShowHeader: true,
+    },
+    {
+        path: '/:type',
+        page: TypeProductPage,
         isShowHeader: true,
     },
     {

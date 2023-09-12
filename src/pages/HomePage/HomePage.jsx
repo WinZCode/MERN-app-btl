@@ -1,13 +1,19 @@
 import React from 'react';
 import TypeProduct from '../../components/TypeProduct/TypeProduct';
-import { Wrapper, WrapperCard, WrapperTypeProduct } from './style';
+import {
+    ButtonComponentLoad,
+    // ButtonComponentLoad,
+    Wrapper,
+    WrapperButton,
+    WrapperCards,
+    WrapperTypeProduct,
+} from './style';
 import SliderComponent from '../../components/SliderComponent/SliderComponent';
 import slider1 from '../../assets/images/slider/slider-1.webp';
 import slider2 from '../../assets/images/slider/slider-2.webp';
 import slider3 from '../../assets/images/slider/slider-3.webp';
 import slider4 from '../../assets/images/slider/slider-4.webp';
 import CardComponent from '../../components/CardComponent/CardComponent';
-import NavbarComponent from '../../components/NavbarComponent/NavbarComponent';
 
 const HomePage = () => {
     const productTypes = ['Television', 'Fridge', 'Laptop', 'Mobile Phone'];
@@ -22,10 +28,20 @@ const HomePage = () => {
                 <SliderComponent
                     arrImages={[slider1, slider2, slider3, slider4]}
                 />
-                <WrapperCard>
+                <WrapperCards>
                     <CardComponent />
-                </WrapperCard>
-                <NavbarComponent />
+                    <CardComponent />
+                    <CardComponent />
+                    <CardComponent />
+                    <CardComponent />
+                </WrapperCards>
+                <WrapperButton>
+                    <ButtonComponentLoad
+                        size="large"
+                        textBtn="Load More..."
+                        style={{ borderRadius: 4, fontWeight: 500 }}
+                    />
+                </WrapperButton>
             </Wrapper>
         </div>
     );
