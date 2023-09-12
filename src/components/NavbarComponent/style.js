@@ -4,6 +4,7 @@ export const WrapperNavbar = styled.div`
     background: #fff;
     padding: 10px;
     border-radius: 6px;
+    height: 1000px;
 `;
 
 export const WrapperLabelText = styled.span`

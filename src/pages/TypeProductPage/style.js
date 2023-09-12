@@ -1,9 +1,8 @@
-import { Row } from 'antd';
 import styled from 'styled-components';
 
-export const WrapperCards = styled(Row)`
+export const WrapperPagination = styled.div`
     display: flex;
     align-items: center;
-    gap: 10x;
-    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 26px;
 `;
