@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
     height: 100vh;
 `;
 
-export const WrapperSignUp = styled.div`
+export const WrapperSignIn = styled.div`
     display: flex;
     width: 800px;
     height: 446px;

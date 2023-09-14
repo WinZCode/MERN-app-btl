@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Checkbox, Form, Input } from 'antd';
+import { ButtonComponentLogin } from './style';
 const onFinish = (values) => {
     console.log('Success:', values);
 };
@@ -26,20 +27,18 @@ const InputFormComponent = () => (
         autoComplete="off"
     >
         <Form.Item
-            label="Username"
-            name="username"
+            name="email"
             rules={[
                 {
                     required: true,
-                    message: 'Please input your username!',
+                    message: 'Please input your email!',
                 },
             ]}
         >
-            <Input />
+            <Input placeholder="abc@gmail.com" style={{ width: 300 }} />
         </Form.Item>
 
         <Form.Item
-            label="Password"
             name="password"
             rules={[
                 {
@@ -48,29 +47,15 @@ const InputFormComponent = () => (
                 },
             ]}
         >
-            <Input.Password />
+            <Input.Password placeholder="Password" style={{ width: 300 }} />
         </Form.Item>
 
-        <Form.Item
-            name="remember"
-            valuePropName="checked"
-            wrapperCol={{
-                offset: 8,
-                span: 16,
-            }}
-        >
+        <Form.Item name="remember" valuePropName="checked">
             <Checkbox>Remember me</Checkbox>
         </Form.Item>
 
-        <Form.Item
-            wrapperCol={{
-                offset: 8,
-                span: 16,
-            }}
-        >
-            <Button type="primary" htmlType="submit">
-                Submit
-            </Button>
+        <Form.Item>
+            <ButtonComponentLogin size="large" textBtn="Sign In" />
         </Form.Item>
     </Form>
 );
