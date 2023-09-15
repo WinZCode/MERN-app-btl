@@ -6,6 +6,7 @@ import {
     WrapperAccount,
     WrapperTextHeader,
     WrapperCart,
+    WrapperLink,
 } from './style';
 import { Badge, Col } from 'antd';
 import {
@@ -41,7 +42,9 @@ const HeaderComponent = () => {
                         <UserOutlined style={{ fontSize: '30px' }} />
                         <div>
                             <WrapperTextHeader>
-                                Sign Up / Sign In
+                                <WrapperLink to="/sign-up">Sign Up</WrapperLink>
+                                <span>/</span>
+                                <WrapperLink to="/sign-in">Sign In</WrapperLink>
                             </WrapperTextHeader>
                             <div>
                                 <WrapperTextHeader>Account</WrapperTextHeader>

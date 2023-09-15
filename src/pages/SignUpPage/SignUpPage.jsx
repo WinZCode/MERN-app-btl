@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from '../../assets/images/logo/evergreen-fox.png';
 import { Wrapper, WrapperLeft, WrapperRight, WrapperSignUp } from './style';
-import InputFormComponent from '../../components/InputFormComponent/InputFormComponent';
+import InputFormComponentSignUp from '../../components/InputFormComponentSignUp/InputFormComponentSignUp';
+import { Link } from 'react-router-dom';
 
 const SignUpPage = () => {
     return (
@@ -13,10 +14,11 @@ const SignUpPage = () => {
                             <h1>Sign Up with email</h1>
                             <p>Enter email and password to create account</p>
                         </div>
-                        <InputFormComponent />
+                        <InputFormComponentSignUp />
                         <div>
                             <span className="create-account">
-                                Already have one ? <a href="!#">Sign In</a>
+                                Already have one ?{' '}
+                                <Link to="/sign-in">Sign In</Link>
                             </span>
                         </div>
                     </div>

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Row } from 'antd';
+import { Link } from 'react-router-dom';
 
 export const WrapperHeader = styled(Row)`
     display: flex;
@@ -37,4 +38,8 @@ export const WrapperCart = styled.div`
     margin-left: 30px;
     cursor: pointer;
     font-weight: 500;
+`;
+
+export const WrapperLink = styled(Link)`
+    color: #fff;
 `;
