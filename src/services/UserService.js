@@ -1,4 +1,4 @@
-const CreateUser = () => {
+const createUser = () => {
     return new Promise((resovle, reject) => {
         try {
             resovle()
@@ -9,5 +9,5 @@ const CreateUser = () => {
 }
 
 module.exports = {
-    CreateUser
+    createUser
 }

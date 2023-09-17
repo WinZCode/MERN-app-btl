@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const OrderSchema = new mongoose.Schema({
+const orderSchema = new mongoose.Schema({
     OrderItems : [
         {
             Name : {type : String, required : true},
@@ -35,5 +35,5 @@ const OrderSchema = new mongoose.Schema({
         timestamps : true,
     }
 );
-const Order = mongoose.model('Order', OrderSchema);
-module.exports = Order
+const order = mongoose.model('Order', orderSchema);
+module.exports = order
