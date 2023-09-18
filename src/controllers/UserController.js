@@ -1,4 +1,4 @@
-import UserService from ('../services/UserService');
+const UserService = require('../services/UserService');
 
 const createUser = async (req, res) => {
     try {
@@ -13,5 +13,5 @@ const createUser = async (req, res) => {
 };
 
 module.exports = {
-    createUser // Sửa tên hàm thành chữ thường theo quy ước của JavaScript
+    createUser, // Sửa tên hàm thành chữ thường theo quy ước của JavaScript
 };
