@@ -2,79 +2,130 @@ const UserService = require('../services/UserService');
 
 const createUser = async (req, res) => {
     try {
-        const {name, email, password, confirmPassword, phone} = req.body
-        const reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
-        if(!name || !email || !password || !confirmPassword || !phone) {
+        const { name, email, password, confirmPassword, phone } = req.body;
+        const reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+        const isCheckEmail = reg.test(email);
+        if (!name || !email || !password || !confirmPassword || !phone) {
             return res.status(200).json({
-                status : "ERR",
-                message : 'The input is required'
-            })
-        }else if(!isCheckEmail) {
+                status: 'ERR',
+                message: 'The input is required',
+            });
+        } else if (!isCheckEmail) {
             return res.status(200).json({
-                status : "ERR",
-                message : 'The input is email'
-            })
-        }else if (password !== confirmPassword){
+                status: 'ERR',
+                message: 'The input is email',
+            });
+        } else if (password !== confirmPassword) {
             return res.status(200).json({
-                status : "ERR",
-                message : 'The password is equal confirmPassword'
-            })
+                status: 'ERR',
+                message: 'The password is equal confirmPassword',
+            });
         }
-        console.log("isCheckEmail", isCheckEmail)
         const response = await UserService.createUser(req.body); // Sử dụng biến khác cho kết quả của UserService.CreateUser()
         return res.status(200).json(response); // Sử dụng biến khác cho kết quả
     } catch (e) {
         return res.status(404).json({
-            message: e // Sửa lại để truy cập thuộc tính 'message' của đối tượng lỗi
+            message: e, // Sửa lại để truy cập thuộc tính 'message' của đối tượng lỗi
         });
     }
 };
 
 const loginUser = async (req, res) => {
     try {
-        const {name, email, password, confirmPassword, phone} = req.body
-        const reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
-        if(!name || !email || !password || !confirmPassword || !phone) {
+        const { name, email, password, confirmPassword, phone } = req.body;
+        const reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+        const isCheckEmail = reg.test(email);
+        if (!name || !email || !password || !confirmPassword || !phone) {
             return res.status(200).json({
-                status : "ERR",
-                message : 'The input is required'
-            })
-        }else if(!isCheckEmail) {
+                status: 'ERR',
+                message: 'The input is required',
+            });
+        } else if (!isCheckEmail) {
             return res.status(200).json({
-                status : "ERR",
-                message : 'The input is email'
-            })
-        }else if (password !== confirmPassword){
+                status: 'ERR',
+                message: 'The input is email',
+            });
+        } else if (password !== confirmPassword) {
             return res.status(200).json({
-                status : "ERR",
-                message : 'The password is equal confirmPassword'
-            })
+                status: 'ERR',
+                message: 'The password is equal confirmPassword',
+            });
         }
-        console.log("isCheckEmail", isCheckEmail)
         const response = await UserService.loginUser(req.body); // Sử dụng biến khác cho kết quả của UserService.CreateUser()
         return res.status(200).json(response); // Sử dụng biến khác cho kết quả
     } catch (e) {
         return res.status(404).json({
-            message: e // Sửa lại để truy cập thuộc tính 'message' của đối tượng lỗi
+            message: e, // Sửa lại để truy cập thuộc tính 'message' của đối tượng lỗi
         });
     }
 };
 
 const updateUser = async (req, res) => {
     try {
-        const userId = req.params.userId
-        const data = req.body
-        if(!userId){
+        const userId = req.params.id;
+        const data = req.body;
+        if (!userId) {
             return res.status(200).json({
-                status : 'ERR',
-                message : 'The userId is require'
-            })
+                status: 'ERR',
+                message: 'The userId is require',
+            });
         }
-        const response = await UserService.updateUser(userId, data)
+        const response = await UserService.updateUser(userId, data);
         return res.status(200).json(response); // Sử dụng biến khác cho kết quả
     } catch (e) {
         return res.status(404).json({
-            message: e // Sửa lại để truy cập thuộc tính 'message' của đối tượng lỗi
+            message: e, // Sửa lại để truy cập thuộc tính 'message' của đối tượng lỗi
+        });
+    }
+};
+
+const deleteUser = async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const token = req.headers;
+        console.log('token', token);
+        if (!userId) {
+            return res.status(200).json({
+                status: 'ERR',
+                message: 'The userId is require',
+            });
+        }
+        const response = await UserService.deleteUser(userId);
+        return res.status(200).json(response);
+    } catch (e) {
+        return res.status(404).json({
+            message: e,
+        });
+    }
+};
+
+const getAllUser = async (req, res) => {
+    try {
+        const response = await UserService.getAllUser();
+        return res.status(200).json(response);
+    } catch (e) {
+        return res.status(404).json({
+            message: e,
+        });
+    }
+};
+
+const getDetailsUser = async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const token = req.headers;
+        console.log('token', token);
+        if (!userId) {
+            return res.status(200).json({
+                status: 'ERR',
+                message: 'The userId is require',
+            });
+        }
+        const response = await UserService.getDetailsUser(userId);
+        return res.status(200).json(response);
+    } catch (e) {
+        return res.status(404).json({
+            message: e,
         });
     }
 };
@@ -82,5 +133,8 @@ const updateUser = async (req, res) => {
 module.exports = {
     createUser,
     loginUser,
-    updateUser
+    updateUser,
+    deleteUser,
+    getAllUser,
+    getDetailsUser,
 };
