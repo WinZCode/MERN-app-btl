@@ -7,11 +7,10 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const port = process.env.PORT || 3001;
+ 
 app.use(bodyParser.json());
 routes(app);
-console.log('process.env.MONGO_DB', process.env.MONGO_DB);
-mongoose
-    .connect(`${process.env.MONGO_DB}`)
+mongoose.connect(`${process.env.MONGO_DB}`)
     .then(() => {
         console.log('Connect DB success!');
     })
@@ -19,5 +18,5 @@ mongoose
         console.log(err);
     });
 app.listen(port, () => {
-    console.log('Server is running in port : ', +port);
+    console.log('Server is running in port : ', + port);
 });
