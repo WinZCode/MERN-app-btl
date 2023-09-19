@@ -60,7 +60,27 @@ const loginUser = async (req, res) => {
     }
 };
 
+const updateUser = async (req, res) => {
+    try {
+        const userId = req.params.userId
+        const data = req.body
+        if(!userId){
+            return res.status(200).json({
+                status : 'ERR',
+                message : 'The userId is require'
+            })
+        }
+        const response = await UserService.updateUser(userId, data)
+        return res.status(200).json(response); // Sử dụng biến khác cho kết quả
+    } catch (e) {
+        return res.status(404).json({
+            message: e // Sửa lại để truy cập thuộc tính 'message' của đối tượng lỗi
+        });
+    }
+};
+
 module.exports = {
     createUser,
-    loginUser
+    loginUser,
+    updateUser
 };
