@@ -7,11 +7,11 @@ const productSchema = new mongoose.Schema(
         price: { type: Number, required: true },
         countInStock: { type: Number, required: true },
         rating: { type: Number, require: true },
-        description: { type: String, require: true },
+        description: { type: String },
     },
     {
         timestamps: true,
     }
 );
-const User = mongoose.model('Product', productSchema);
+const Product = mongoose.model('Product', productSchema);
 module.exports = Product;
