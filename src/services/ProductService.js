@@ -31,7 +31,6 @@ const createProduct = (newProduct) => {
                     data: createdProduct,
                 });
             }
-            resovle({});
         } catch (e) {
             reject(e);
         }
