@@ -158,7 +158,7 @@ const getDetailsUser = (id) => {
             const user = await User.findOne({
                 _id: id,
             });
-            if (checkUser == null) {
+            if (user == null) {
                 resovle({
                     status: 'OK',
                     message: 'The user is not defined',
