@@ -97,7 +97,7 @@ const updateUser = (id, data) => {
                 });
             }
 
-            const updateUser = await User.findByIdAndUpdate(ip, data, {
+            const updateUser = await User.findByIdAndUpdate(id, data, {
                 new: true,
             });
             resovle({

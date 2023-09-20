@@ -1,18 +1,17 @@
-const ProductService = require('../services/ProductService')
+const ProductService = require('../services/ProductService');
 
 const createProduct = async (req, res) => {
     try {
-        const { name, image, type, countInStock, price, description, rating} = req.body;
-
-        if (!name || !image || !type || !countInStock || !price || !rating) {
+        const { name, image, type, price, countInStock, rating, description } =
+            req.body;
+        if (!name || !image || !type || !price || !countInStock || !rating) {
             return res.status(200).json({
                 status: 'ERR',
                 message: 'The input is required',
             });
-        } 
-        console.log("respone", response)
+        }
         const response = await ProductService.createProduct(req.body); // Sử dụng biến khác cho kết quả của UserService.CreateUser()
-        return res.status(200).json(response);// Sử dụng biến khác cho kết quả
+        return res.status(200).json(response); // Sử dụng biến khác cho kết quả
     } catch (e) {
         return res.status(404).json({
             message: e, // Sửa lại để truy cập thuộc tính 'message' của đối tượng lỗi
@@ -77,7 +76,11 @@ const deleteProduct = async (req, res) => {
 
 const getAllProduct = async (req, res) => {
     try {
-        const response = await ProductService.getAllProduct();
+        const { limit, page } = req.body;
+        const response = await ProductService.getAllProduct(
+            Number(limit),
+            Number(page)
+        );
         return res.status(200).json(response);
     } catch (e) {
         return res.status(404).json({
