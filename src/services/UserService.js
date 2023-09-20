@@ -152,7 +152,7 @@ const getAllUser = () => {
     });
 };
 
-const getAllUserUser = (id) => {
+const getDetailsUser = (id) => {
     return new Promise(async (resovle, reject) => {
         try {
             const user = await User.findOne({
@@ -182,5 +182,5 @@ module.exports = {
     updateUser,
     deleteUser,
     getAllUser,
-    getAllUserUser,
+    getDetailsUser,
 };
